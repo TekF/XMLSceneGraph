@@ -1,0 +1,38 @@
+<!-- examples of the usage I currently think makes most sense !-->
+
+<scenegraph>
+	<canvas id="buffer1" width="1500" height="500" hidden>
+		<fullscreen>
+			<pixelshader source="firstpass.glsl"/>
+			<texture channel="0" source="buffer1"/>
+		</fullscreen>
+	</canvas>
+	<canvas width="1500" height="500">
+		<fullscreen>
+			<pixelshader source="finalpass.glsl"/>
+			<texture channel="0" source="buffer1"/>
+		</fullscreen>
+	</canvas>
+	
+	<!-- ------------ !-->
+	
+	<canvas width="1280" height="720">
+		<mesh source="car.obj">
+			<!-- shorthand: anything outside of the material is default, overridden by material's specialisations !-->
+			<vertexshader source="static.glsl"/>
+			<texture channel="0" source="textures/albedo.png"/>
+			<texture channel="1" source="textures/normalao.png"/>
+			<texture channel="2" source="textures/specmetal.png"/>
+			<material index="0">
+				<pixelshader source="paint.glsl"/>
+			</material>
+			<material index="1">
+				<pixelshader source="metalwork.glsl"/>
+			</material>
+			<material index="2">
+				<pixelshader source="rubber.glsl"/>
+			</material>
+		</mesh>
+	</canvas>
+
+</scenegraph>

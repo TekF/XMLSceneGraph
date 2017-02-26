@@ -1,0 +1,17 @@
+<scenegraph>
+	<!--
+	<buffer id="buffer0"> default viewport width/height == canvas unless specified
+		<mesh source="bunny.obj">
+			default vertex shader = world->screenspace position, normal, uv
+			<pixelshader source="velvet.glsl">
+				<param name="albedo" value="#002080"></param>
+			</pixelshader>
+		</mesh>
+	</buffer>
+	!-->
+	<canvas width="1500" height="500">
+		<fullscreen>
+			<pixelshader source="test.glsl"></pixelshader>
+		</fullscreen>
+	</canvas>
+</scenegraph>
